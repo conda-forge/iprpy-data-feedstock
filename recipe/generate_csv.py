@@ -13,7 +13,7 @@ def get_list_of_potentials(path):
 
 def get_lammps_config(pot):
     pot_str_lst = pot.pair_info().replace(pot.pot_dir + "/", "").split("\n")
-    return [l + "\n" for l in pot_str_lst if 'mass' not in l and l is not ""]
+    return [l + "\n" for l in pot_str_lst if 'mass' not in l and l != ""]
 
 def get_file_names(pot):
     file_lst = []
@@ -64,7 +64,7 @@ def pyiron_potentials(pot_lst, potdb):
 
 
 if __name__ == "__main__":
-    path = os.abspath(os.getcwd())
+    path = os.path.abspath(os.getcwd())
     potdb, pot_lst = get_list_of_potentials(path=path)
     df = pyiron_potentials(pot_lst=pot_lst, potdb=potdb)
     df.to_csv("potentials_lammps.csv")
