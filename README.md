@@ -5,9 +5,13 @@ Home: https://github.com/usnistgov/iprPy
 
 Package license: OTHER
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/iprpy-data-feedstock/blob/master/LICENSE.txt)
 
 Summary: NIST Interatomic Potential Repository property calculation tools
+
+Development: https://github.com/usnistgov/iprPy
+
+Documentation: https://www.ctcms.nist.gov/potentials/iprPy/
 
 The iprPy framework is a collection of tools and resources supporting
 the design of scientific calculations that are open source with minimum
