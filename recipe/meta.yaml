@@ -1,12 +1,12 @@
 {% set name = "iprpy-data" %}
-{% set version = "0.9.1" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/usnistgov/iprPy/archive/95ab94f78826fa3bc94faf2b10dc01477afea762.tar.gz
+  url: https://github.com/lmhale99/potentials-library/archive/9b85179b4b29dc04a5cba18443bae063ab9fc2ba.tar.gz
   sha256: bd21c51cfd54f366113cf5247f8d2a387262db0a0c98e672233335b52a6f1ca9
 
 build:
