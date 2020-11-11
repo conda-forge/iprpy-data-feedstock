@@ -17,9 +17,10 @@ build:
 
 requirements:
   build:
-    - python
     - potentials
     - pandas
+  host:
+    - python
   run:
 
 test:
