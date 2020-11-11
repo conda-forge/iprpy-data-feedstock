@@ -10,7 +10,7 @@ source:
   sha256: 52964487fbf9df28c0675a3f4ddd2fe0e415f724bb5125b8fbf54c84cd12d224
 
 build:
-  number: 0
+  number: 2
   noarch: generic
   run_exports:
     - {{ pin_subpackage('iprpy-data', max_pin='x.x.x') }}
