@@ -1,5 +1,5 @@
 {% set name = "iprpy-data" %}
-{% set version = "1.0.0" %}
+{% set version = "2020.11.11" %}
 
 package:
   name: {{ name|lower }}
@@ -10,18 +10,22 @@ source:
   sha256: 52964487fbf9df28c0675a3f4ddd2fe0e415f724bb5125b8fbf54c84cd12d224
 
 build:
-  number: 1
-  noarch: generic
+  number: 0
+  noarch: python
   run_exports:
     - {{ pin_subpackage('iprpy-data', max_pin='x.x.x') }}
 
 requirements:
   build:
+    - potentials
+    - pandas
+  host:
+    - python
   run:
 
 test:
   commands:
-    - test -f ${PREFIX}/share/iprpy/potential_LAMMPS/2006--Chamati-H--Fe--LAMMPS--ipr1/Fe_Mishin2006.eam.alloy  # [unix]
+    - test -f ${PREFIX}/share/iprpy/potentials_lammps.csv  # [unix]
 
 about:
   home: https://github.com/usnistgov/iprPy
