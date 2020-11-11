@@ -11,17 +11,20 @@ source:
 
 build:
   number: 1
-  noarch: generic
+  noarch: python
   run_exports:
     - {{ pin_subpackage('iprpy-data', max_pin='x.x.x') }}
 
 requirements:
   build:
+    - python
+    - potentials
+    - pandas
   run:
 
 test:
   commands:
-    - test -f ${PREFIX}/share/iprpy/potential_LAMMPS/2006--Chamati-H--Fe--LAMMPS--ipr1/Fe_Mishin2006.eam.alloy  # [unix]
+    - test -f ${PREFIX}/share/iprpy/potentials_lammps.csv  # [unix]
 
 about:
   home: https://github.com/usnistgov/iprPy
