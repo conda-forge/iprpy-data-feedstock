@@ -12,8 +12,11 @@ def get_list_of_potentials(path):
     return potdb, potdb.get_lammps_potentials()
 
 def get_lammps_config(pot):
-    pot_str_lst = pot.pair_info().replace(pot.pot_dir + "/", "").split("\n")
-    return [l + "\n" for l in pot_str_lst if 'mass' not in l and l != ""]
+    if pot.asdict()['pair_style'] == 'kim':
+        return ["pair_style kim " + pot.asdict()["id"] + "\n", "pair_coeff * * " + " ".join(pot.asdict()["elements"]) + "\n"]
+    else:
+        pot_str_lst = pot.pair_info().replace(pot.pot_dir + "/", "").split("\n")
+        return [l + "\n" for l in pot_str_lst if 'mass' not in l and l is not ""]
 
 def get_file_names(pot):
     file_lst = []
