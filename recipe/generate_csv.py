@@ -40,12 +40,17 @@ def get_model(pot):
     else: 
         return "NISTiprpy"
 
+def convert_citation(entry_dict):
+    cite_dict = {k: entry_dict[k] for k in ['title', 'journal', 'volume', 'pages', 'number', 'doi', 'publisher', 'url', 'year'] if k in entry_dict.keys()}
+    cite_dict['author'] = entry_dict['author'].split(" and ")
+    return {entry_dict["ID"]: cite_dict}
+    
 def get_citations(pot, potdb):
     try:
         pot_el = potdb.get_potential(id=pot.asdict()['potid'])
     except ValueError:
         return None
-    return [c.asdict() for c in pot_el.asdict()["citations"]]
+    return [convert_citation(entry_dict=c.asdict()) for c in pot_el.asdict()["citations"]]
 
 def pyiron_potentials(pot_lst, potdb):
     config_lst, file_name_lst, model_lst, name_lst, species_lst, citations_lst = [], [], [], [], [], []
