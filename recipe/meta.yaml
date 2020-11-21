@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/lmhale99/potentials-library/archive/{{ version | replace(".", "-" }}.tar.gz
+  url: https://github.com/lmhale99/potentials-library/archive/{{ version.replace(".", "-" }}.tar.gz
   sha256: 52964487fbf9df28c0675a3f4ddd2fe0e415f724bb5125b8fbf54c84cd12d224
 
 build:
