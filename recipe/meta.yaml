@@ -1,12 +1,12 @@
 {% set name = "iprpy-data" %}
-{% set version = "2020.11.20" %}
+{% set version = "2020.12.11" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/lmhale99/potentials-library/archive/{{ version.replace(".", "-") }}.tar.gz
+  url: https://github.com/lmhale99/potentials-library/archive/cc8e68f6e206ca1af0c4a4e7ea29fe44b93ef584.tar.gz
   sha256: f136738cff2ef5f3ec49fb88b67c0863e3bc61a1617971eed8df3aff56a3e193
 
 build:
