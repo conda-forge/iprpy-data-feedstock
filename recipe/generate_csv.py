@@ -118,7 +118,7 @@ def pyiron_potentials(pot_lst, potdb):
         file_name_lst.append([])
         model_lst.append('OPENKIM')
         name_lst.append(p)
-        citation_lst.append(get_openkim_citation(p=p, it=it, col=col))
+        citations_lst.append(get_openkim_citation(p=p, it=it, col=col))
     return pandas.DataFrame({
         "Config": config_lst, 
         "Filename": file_name_lst, 
