@@ -22,6 +22,7 @@ requirements:
     - edn_format
     - openkim-models
     - kimpy
+    - mendeleev
   host:
     - python
   run:
