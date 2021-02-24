@@ -109,9 +109,10 @@ def pyiron_potentials(pot_lst, potdb):
             citations_lst.append(get_citations(pot=pot, potdb=potdb))
     col, error = kimpy.collections.create()
     ptable = get_table('elements')
-    for pit in get_openkim_potential_lst(col=col, element_lst=ptable.symbol.tolist()):
+    element_lst = ptable.symbol.tolist()
+    for pit in get_openkim_potential_lst(col=col):
         it, p = pit
-        el_lst, pot_str = get_openkim_lammps_parameter(p=p)
+        el_lst, pot_str = get_openkim_lammps_parameter(p=p, element_lst=element_lst)
         species_lst.append(el_lst)
         config_lst.append(pot_str)
         file_name_lst.append([])
