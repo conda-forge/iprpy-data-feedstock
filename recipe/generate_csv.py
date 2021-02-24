@@ -56,7 +56,7 @@ def get_citations(pot, potdb):
         return None
     return [convert_citation(entry_dict=c.asdict()) for c in pot_el.asdict()["citations"]]
 
-def get_openkim_lammps_parameter(p):
+def get_openkim_lammps_parameter(p, element_lst):
     el_lst = re.findall('[A-Z][^A-Z]*', p.split('__')[0].split('_')[-1])
     if all(el in element_lst for el in el_lst):
         return el_lst, ["pair_style kim " + p + "\n", "pair_coeff * * " + " ".join(el_lst) + "\n"]
@@ -109,8 +109,7 @@ def pyiron_potentials(pot_lst, potdb):
             citations_lst.append(get_citations(pot=pot, potdb=potdb))
     col, error = kimpy.collections.create()
     ptable = get_table('elements')
-    element_lst = ptable.symbol.tolist()
-    for pit in get_openkim_potential_lst(col=col):
+    for pit in get_openkim_potential_lst(col=col, element_lst=ptable.symbol.tolist()):
         it, p = pit
         el_lst, pot_str = get_openkim_lammps_parameter(p=p)
         species_lst.append(el_lst)
