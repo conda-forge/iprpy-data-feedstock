@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/lmhale99/potentials-library/archive/refs/tags/2021-03-03.tar.gz
+  url: https://github.com/lmhale99/potentials-library/archive/refs/tags/{{ version|replace('.', '-') }}.tar.gz
   sha256: c1af28f0d3121b44d3343f7bc6b187292f1b99f80485929930f9c8ef38e2b567
 
 build:
-  number: 0
+  number: 1
   noarch: python
   run_exports:
     - {{ pin_subpackage('iprpy-data', max_pin='x.x.x') }}
