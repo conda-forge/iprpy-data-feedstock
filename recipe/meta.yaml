@@ -24,7 +24,7 @@ requirements:
     - kimpy
     - mendeleev
   host:
-    - python
+    - python >=3.6
   run:
 
 test:
