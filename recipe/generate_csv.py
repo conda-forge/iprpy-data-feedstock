@@ -1,6 +1,7 @@
 import os
 import re
 from mendeleev import get_table
+from mendeleev.fetch import fetch_table
 import edn_format
 import kimpy
 import potentials
@@ -108,7 +109,7 @@ def pyiron_potentials(pot_lst, potdb):
             species_lst.append(get_species(pot=pot))
             citations_lst.append(get_citations(pot=pot, potdb=potdb))
     col, error = kimpy.collections.create()
-    ptable = get_table('elements')
+    ptable = fetch_table('elements')
     element_lst = ptable.symbol.tolist()
     for pit in get_openkim_potential_lst(col=col):
         it, p = pit
