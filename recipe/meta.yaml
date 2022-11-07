@@ -1,5 +1,5 @@
 {% set name = "iprpy-data" %}
-{% set version = "2021.12.10" %}
+{% set version = "2022.01.14" %}
 
 package:
   name: {{ name|lower }}
