@@ -1,6 +1,5 @@
 import os
 import re
-from mendeleev import get_table
 from mendeleev.fetch import fetch_table
 import edn_format
 import kimpy
