@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/lmhale99/potentials-library/archive/refs/tags/{{ version|replace('.', '-') }}.tar.gz
-  sha256: c1af28f0d3121b44d3343f7bc6b187292f1b99f80485929930f9c8ef38e2b567
+  sha256: 6e395d240ae65431e03856de229ba5f182bd998fc06425e9b7c9ba2943fda288
 
 build:
   number: 0
