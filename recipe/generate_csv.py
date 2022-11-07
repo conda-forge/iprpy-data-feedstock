@@ -7,7 +7,7 @@ import potentials
 import pandas
 
 def get_list_of_potentials(path):
-    settings = potentials.Settings()
+    settings = potentials.Settings.Settings()
     settings.set_local(True)
     settings.set_remote(False)
     if ".NISTpotentials" in str(settings.library_directory):
