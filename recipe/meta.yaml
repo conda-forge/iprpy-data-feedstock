@@ -21,7 +21,7 @@ requirements:
     - pandas
     - edn_format
     - openkim-models
-    - kimpy
+    - kimpy =1.0.0
     - mendeleev
   host:
     - python >=3.7
