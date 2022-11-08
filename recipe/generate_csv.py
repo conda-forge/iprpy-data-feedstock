@@ -12,7 +12,7 @@ def get_list_of_potentials(path):
     settings.set_remote(False)
     # if ".NISTpotentials" in str(settings.library_directory):
     #     settings.set_library_directory(path)
-    potdb = potentials.Database(load=True, remote=False, verbose=True)
+    potdb = potentials.Database(local=True, remote=True)
     return potdb, potdb.get_lammps_potentials()
 
 def get_lammps_config(pot):
