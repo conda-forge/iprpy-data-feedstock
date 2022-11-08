@@ -1,5 +1,5 @@
 {% set name = "iprpy-data" %}
-{% set version = "2021.12.10" %}
+{% set version = "2022.01.14" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/lmhale99/potentials-library/archive/refs/tags/{{ version|replace('.', '-') }}.tar.gz
-  sha256: 016698f75d1d3ddaf9efe24d68b7ee6743aca4a52c5f1f46d2cdf8d72accff7f
+  sha256: 96e440a727495589b38cb8d59e6aa4c89a5338a1be6ec1bf3ec6557f31372ca0
 
 build:
   number: 0
