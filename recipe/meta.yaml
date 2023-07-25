@@ -1,5 +1,5 @@
 {% set name = "iprpy-data" %}
-{% set version = "2022.11.02" %}
+{% set version = "2023.07.25" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/lmhale99/potentials-library/archive/refs/tags/{{ version|replace('.', '-') }}.tar.gz
-  sha256: 6e395d240ae65431e03856de229ba5f182bd998fc06425e9b7c9ba2943fda288
+  sha256: f2c692dd3e2b139f2852ce3ffb10a4e6e7dd4002f4645a1150829643974fce42
 
 build:
   number: 0
@@ -37,7 +37,7 @@ about:
   license: OTHER
   license_family: OTHER
   license_file: LICENSE.TXT
-  summary: 'NIST Interatomic Potential Repository property calculation tools'
+  summary: NIST Interatomic Potential Repository property calculation tools
 
   description: |
     The iprPy framework is a collection of tools and resources supporting 
