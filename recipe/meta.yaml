@@ -10,7 +10,7 @@ source:
   sha256: f2c692dd3e2b139f2852ce3ffb10a4e6e7dd4002f4645a1150829643974fce42
 
 build:
-  number: 0
+  number: 1
   noarch: python
   run_exports:
     - {{ pin_subpackage('iprpy-data', max_pin='x.x.x') }}
@@ -24,11 +24,13 @@ requirements:
     - kimpy =1.0.0
     - mendeleev
   host:
-    - python >=3.7
+    - python {{ python_min }}
   run:
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - test -f ${PREFIX}/share/iprpy/potentials_lammps.csv  # [unix]
 
